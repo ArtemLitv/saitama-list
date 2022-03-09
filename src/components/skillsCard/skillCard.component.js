@@ -47,6 +47,7 @@ const replaceValue = (skill, mainSkills) => {
 export const SkillCard = (props) => {
     const { skill, mainSkills } = props;
     const [resultCondition, setResultCondition] = useState('');
+    const [areFull, setAreFull] = useState(false);
     const [logger, setLogger] = useRecoilState(loggerAtom);
 
     const clickCalculate = skill => () => {
@@ -61,6 +62,11 @@ export const SkillCard = (props) => {
                 }]
         });
         setResultCondition(result);
+
+        setAreFull(true);
+        setTimeout(() => {
+            setAreFull(false);
+        }, 500);
     }
 
     const parseResult = (resultCondition) => {
@@ -76,7 +82,8 @@ export const SkillCard = (props) => {
         <div className={style.card} onClick={clickCalculate(skill)}>
             <h2 className={style.title}>{skill.title}</h2>
             <p className={style.description}>{skill.description}</p>
-            {resultCondition ? <p>result = {parseResult(resultCondition)}</p> : <p>Click to card!</p>}
+            {resultCondition ? <p className={`${style.result} ${(areFull ? style._full : '')}`}
+            >result = {parseResult(resultCondition)}</p> : <p>Click to card!</p>}
         </div>
     )
 }
