@@ -1,0 +1,42 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    max-width: 100%;
+    overflow: hidden
+}
+
+.title {
+    margin: 0;
+    padding: 5px;
+    background-color: #eee;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+.header {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    transition: 0.2s;
+    padding: 10px;
+}
+
+.card:hover {
+    background-color: #eee;
+}
+
+.log_value {
+    margin: 0;
+    padding: 0;
+}
+
+.date {
+    font-size: 0.7em;
+    color: rgb(157 157 157 / 78%);
+    font-style: italic;
+}

@@ -1,0 +1,10 @@
+.wrapper {
+    overflow: auto;
+    box-shadow: 5px 0px 10px 3px rgba(34, 60, 80, 0.2);
+}
+
+.title {
+    margin: 0;
+    padding: 5px;
+    background-color: #eee;
+}
